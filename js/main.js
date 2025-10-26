@@ -1,26 +1,28 @@
-//Handle Capital Letters, Place result in DOM, add a check for humpday (Wed)
+// //Handle Capital Letters, Place result in DOM, add a check for humpday (Wed)
 
-document.querySelector('#check').addEventListener('click',check)
+document.querySelector('#check').addEventListener('click', check)
 
 function check(){
- const day =  document.querySelector('#day').value
+
+ let day =  document.querySelector('#day').value
+ 
+ day = day.toLowerCase();
+
+ let message = "";
 
  if(day === "tuesday" || day === "thursday"){
-  alert("YOU HAVE CLASS");
+  message = "YOU HAVE CLASS"
  }
-
- else if(day === "saturday" || day === "sunday"){
-  alert("WEEKEND");
- }
-
  else if(day === "wednesday"){
-  alert("HUMPDAY")
+  message = "Humpday — halfway there!"
  }
-
+ else if(day === "saturday" || day === "sunday"){
+  message = "WEEKEND"
+ }
  else{
-  alert("BORING")
+ message = "BORING"
  }
+
+
+ document.querySelector('#placeToSee').textContent = message;
 }
-
-  
-
